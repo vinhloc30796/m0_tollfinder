@@ -1,4 +1,4 @@
-export type RouteKey = "eth-arb" | "eth-opt" | "arb-eth" | "opt-eth" | "eth-plume" | "plume-eth" | "eth-hyperevm";
+export type RouteKey = "eth-arb" | "eth-opt" | "arb-eth" | "opt-eth" | "eth-plume" | "plume-eth" | "eth-hyperevm" | "hyperevm-eth";
 
 export type RouteDef = {
   key: RouteKey;
@@ -83,6 +83,19 @@ export const ROUTES = {
     targetChainId: 47,
     sourceChain: "eth",
     label: "ETH → HyperEVM",
+    description: "Portal-Lite",
+    needsAmount: true,
+    needsRecipient: true,
+    disabled: true,
+    disabledReason: "HyperEVM is experimental on Wormhole.",
+    disabledLink: "https://wormhole.com/docs/products/reference/chain-ids/",
+  },
+  "hyperevm-eth": {
+    key: "hyperevm-eth",
+    type: "portal-lite",
+    targetChainId: 47,
+    sourceChain: "hyperevm",
+    label: "HyperEVM → ETH",
     description: "Portal-Lite",
     needsAmount: true,
     needsRecipient: true,
